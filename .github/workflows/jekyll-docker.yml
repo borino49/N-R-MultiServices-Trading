@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="N@e&R@ MultiServices Trading - Services de location, multimédia, formation et import-export à Abidjan. Solutions professionnelles sur mesure.">
+    <meta name="keywords" content="location saisonnière, multimédia, formation, import-export, trading, Abidjan, Côte d'Ivoire">
+    <meta name="author" content="N@e&R@ MultiServices Trading">
+    <meta name="robots" content="index, follow">
+    <title>N@e&R@ MultiServices Trading</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3e8e41;
+            --primary-dark: #2e6b31;
+            --text-color: #333333;
+            --white: #ffffff;
+        }
+
+        /* Base styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header styles */
+        .header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .header h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Navigation */
+        .nav {
+            background-color: var(--white);
+            padding: 1rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .nav a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Services */
+        .services {
+            padding: 4rem 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2c3e50;
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <img src="logo.jpg" alt="N@e&R@ MultiServices Trading">
+            <h1>N@e&R@ MultiServices Trading</h1>
+            <p>Votre partenaire de confiance pour tous vos besoins professionnels</p>
+        </div>
+    </header>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Nos Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="location.jpg" alt="Location saisonnière">
+                    <h3>Location saisonnière</h3>
+                    <p>Appartements meublés modernes à partir de 15,000 FCFA/nuit.</p>
+                    <a href="#" class="btn">Réserver</a>
+                </div>
+                <div class="service-card">
+                    <img src="multimedia.jpg" alt="Services multimédia">
+                    <h3>Multimédia</h3>
+                    <p>Box Android, installations et abonnements streaming.</p>
+                    <a href="#" class="btn">Découvrir</a>
+                </div>
+                <div class="service-card">
+                    <img src="formation.jpg" alt="Formation">
+                    <h3>Formation</h3>
+                    <p>Formations personnalisées et accompagnement professionnel.</p>
+                    <a href="#" class="btn">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 N@e&R@ MultiServices Trading. Tous droits réservés.</p>
+            <p><a href="mailto:contact@naera-trading.com">contact@naera-trading.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>
