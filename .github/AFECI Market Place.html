@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription - AFECI MarketPlace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        img {
+            width: 100px;
+        }
+        h2 {
+            color: #004080;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input, select {
+            width: 80%;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #004080;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #002060;
+        }
+        #autreCompetence {
+            display: none; /* Caché par défaut */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo AFECI -->
+        <img src="logo_afeci.jpg" alt="Logo AFECI">
+        <h2>Formulaire d'inscription - AFECI MarketPlace</h2>
+
+        <form id="afeciForm">
+            <input type="text" id="nom" placeholder="Nom & Prénoms" required>
+            <input type="tel" id="whatsapp" placeholder="Numéro WhatsApp" required>
+            
+            <select id="competence" required onchange="afficherChampAutre()">
+                <option value="">Sélectionnez votre compétence</option>
+                <option value="Développement Web">Développement Web</option>
+                <option value="Développement Mobile">Développement Mobile</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+                <option value="Marketing Digital">Marketing Digital</option>
+                <option value="Gestion de projet">Gestion de projet</option>
+                <option value="Autre">Autre</option>
+            </select>
+
+            <!-- Champ pour une compétence personnalisée -->
+            <input type="text" id="autreCompetence" placeholder="Précisez votre compétence">
+
+            <button type="button" onclick="envoyerWhatsApp()">Envoyer l'inscription</button>
+        </form>
+    </div>
+
+    <script>
+        function afficherChampAutre() {
+            let competence = document.getElementById("competence").value;
+            let autreCompetence = document.getElementById("autreCompetence");
+
+            if (competence === "Autre") {
+                autreCompetence.style.display = "block";
+                autreCompetence.setAttribute("required", "true");
+            } else {
+                autreCompetence.style.display = "none";
+                autreCompetence.removeAttribute("required");
+                autreCompetence.value = ""; // Efface le champ si l'utilisateur change d'avis
+            }
+        }
+
+        function envoyerWhatsApp() {
+            let nom = document.getElementById("nom").value;
+            let whatsapp = document.getElementById("whatsapp").value;
+            let competence = document.getElementById("competence").value;
+            let autreCompetence = document.getElementById("autreCompetence").value;
+
+            if (nom === "" || whatsapp === "" || competence === "") {
+                alert("Veuillez remplir tous les champs.");
+                return;
+            }
+
+            // Vérifier si "Autre" a été sélectionné et ajouter cette compétence
+            let competenceFinale = (competence === "Autre") ? autreCompetence : competence;
+
+            let message = `Nouvelle inscription AFECI :%0A👤 Nom : ${nom}%0A📱 WhatsApp : ${whatsapp}%0A💼 Compétence : ${competenceFinale}`;
+            let numeroWhatsApp = "2250787052416"; // Ton numéro WhatsApp sans +
+
+            let lienWhatsApp = `https://wa.me/${2250787052416}?text=${message}`;
+            window.location.href = lienWhatsApp; // Redirige l'utilisateur vers WhatsApp
+        }
+    </script>
+
+</body>
+</html>
